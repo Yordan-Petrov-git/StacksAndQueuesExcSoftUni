@@ -5,23 +5,27 @@ import java.util.ArrayDeque;
 import java.util.Arrays;
 
 public class Main {
+   public static BufferedReader reader =
+            new BufferedReader(
+                    new InputStreamReader(
+                            System.in
+                    )
+            );
     public static void main(String[] args) throws IOException {
-        BufferedReader reader =
-                new BufferedReader(
-                        new InputStreamReader(
-                                System.in
-                        )
-                );
-        //String [] input = reader.readLine().split("\\s+");
+//======================1.	Reverse Numbers with a Stack==================
+        revereseNumWIthStack();
+//========================================================================
+    }
 
-        ArrayDeque <String> stack = new ArrayDeque<>();
+    private static void revereseNumWIthStack() throws IOException {
+        ArrayDeque<String> stack = new ArrayDeque<>();
 
-        Arrays.stream(reader.readLine().split("\\s+")).forEach(stack :: push);
+        Arrays.stream(
+                reader.readLine().split("\\s+"))
+                .forEach(stack::push);
 
-//        for (String s : input) {
-//            stack.push(Integer.parseInt(s));
-//        }
-
-        System.out.println(stack);
+        while (!stack.isEmpty()) {
+            System.out.print(stack.pop() + " ");
+        }
     }
 }
