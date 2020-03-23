@@ -3,6 +3,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayDeque;
 import java.util.Arrays;
+import java.util.Deque;
 
 public class Main {
    public static BufferedReader reader =
@@ -18,7 +19,7 @@ public class Main {
     }
 
     private static void revereseNumWIthStack() throws IOException {
-        ArrayDeque<String> stack = new ArrayDeque<>();
+        Deque<String> stack = new ArrayDeque<>();
 
         Arrays.stream(
                 reader.readLine().split("\\s+"))
