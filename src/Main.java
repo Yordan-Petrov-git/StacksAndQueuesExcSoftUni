@@ -26,8 +26,10 @@
             //3.	Maximum Element
     //========================================================================
             //4.	Basic Queue Operations
-    //========================================================================
+            //basicQ();
+            //========================================================================
             //5.	Robotics
+
     //========================================================================
             //6.	Balanced Parentheses
     //========================================================================
@@ -41,6 +43,32 @@
     //========================================================================
 
 
+        }
+
+        private static void basicQ() throws IOException {
+            String[] comands = reader.readLine().split("\\s+");
+            String[] numbersIn = reader.readLine().split("\\s+");
+
+            Deque<Integer> nums = new ArrayDeque<>();
+
+            int numberToAdd = Integer.parseInt(comands[0]);
+            int numberToPoll = Integer.parseInt(comands[1]);
+            int numberToCheck = Integer.parseInt(comands[2]);
+
+
+            for (int i = 0; i < numberToAdd; i++) {
+                nums.offer(Integer.parseInt(numbersIn[i]));
+            }
+            for (int i = 0; i <numberToPoll ; i++) {
+                nums.poll();
+            }
+            if(nums.contains(numberToCheck)){
+                System.out.println("true");
+            }else if(nums.isEmpty()){
+                System.out.println("0");
+            }else {
+                System.out.println(Collections.min(nums));
+            }
         }
 
         private static void basicStackOperations() throws IOException {
